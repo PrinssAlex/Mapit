@@ -40,7 +40,7 @@ for lt,ln,el,nm in zip(lat,lon,elv,name):
 #FeatureGroup added to group polygon (mark out territories on the map) layer together - adds a chloropleth feature
 fg_pol = fl.FeatureGroup(name='polygons')
 fg_pol.add_child( fl.GeoJson( data= open('Geo_JSON.json', 'r', encoding='utf-8-sig').read() ,
-style_function=lambda x: {'fillColor':'yellow' if x['properties']['POP2005'] < 1000000 else 'orange' if 
+style_function=lambda x: {'fillColor':'yellow' if x['properties']['POP2005'] < 10000000 else 'orange' if 
 10000000 <= x['properties']['POP2005'] < 20000000 else 'red' } ) ) #adding a color overlay wrt country populationn using a lambda function
 # Add feature group to map
 mapit.add_child(fg_mkr)
